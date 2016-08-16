@@ -2,6 +2,8 @@
 ### Lab 2: Remote DNS Cache Poisoning
 ___
 
+
+
 ### Introduction
 In this project we implemented a remote DNS cache poisoning attack. The goal of this attack is to force a DNS resolver to save in its cache a IP for a given domain that is different from the original one. DNS cache poisoning attacks are the Swiss army knife for a hacker. Ôhere are many potential further attacks after a successful DNS cache poisoning. For example, after a successful cache poisoning, when a user asks the resolver for the address of www.google.com instead of 216.58.216.68, the resolver will return 9.9.9.9, which an IP controlled by an attacker. Once the user gets connected to the wrong machine, there are many attack avenues.
 
