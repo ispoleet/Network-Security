@@ -1,6 +1,6 @@
 ### Purdue CS528 - Network Security - Spring 2016
 ### Lab 3: Virtual Private Network
-___
+___ 
 
 ### Introduction
 In this lab we implemented a simple VPN service. The purpose of VPN is to provide a client a "virtual" connection to a different network. Although client may not be physically connected to that network, he can have exactly the same functionality as being physically connected to it. This can be done by "grapping" all IP packets, send them to a remote host that is on the target network, and forward them in the target network. 
