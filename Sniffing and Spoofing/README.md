@@ -1,7 +1,7 @@
 ### Purdue CS528 - Network Security - Spring 2016
 ### Lab 1: Sniffing and Spoofing
 ___
-
+ 
 ### Spoofing
 
 We can spoof a ping packet this way:
