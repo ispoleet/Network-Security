@@ -14,7 +14,7 @@ In this example we send an ICMP echo request packet with a bogus payload to 192.
 source address 99.99.99.99. At the same time we launch tcpdump on 192.168.15.5 to sniff the 
 spoofed packet:
 
-![alt text](https://github.com/isp0/Network-Security/blob/master/Sniffing%20and%20Spoofing/images/image_1.png 
+![alt text](./images/image_1.png 
 "Figure 1. Sending spoofed ping requests")
  
 
@@ -32,10 +32,10 @@ In this case (figure 2) we send a frame to 08:00:27:1c:7b:03 (VM2) with source M
     --src-mac=01:02:03:04:05:06  
 ```
 
-![alt text](https://github.com/isp0/Network-Security/blob/master/Sniffing%20and%20Spoofing/images/image_2.png 
+![alt text](./images/image_2.png 
 "Figure 2. Sending spoofed Ethernet frames")
  
-![alt text](https://github.com/isp0/Network-Security/blob/master/Sniffing%20and%20Spoofing/images/image_3.png 
+![alt text](./images/image_3.png 
 "Figure 3. Sending spoofed Ethernet frames, with spoofed ICMP payloads")
  
 ___
@@ -48,10 +48,10 @@ When we do a ping to 8.8.8.8 (Google's public DNS) we don't get any response (ti
 
 We have to be careful here. If we send a spoofed IP packet, is not enough. We have to send a spoofed Ethernet frame, otherwise MAC address won't be consistent, and thus packet will be dropped by destination.
 
-![alt text](https://github.com/isp0/Network-Security/blob/master/Sniffing%20and%20Spoofing/images/image_4.png 
+![alt text](./images/image_4.png 
 "Figure 4. Sniffing and spoofing")
  
- ![alt text](https://github.com/isp0/Network-Security/blob/master/Sniffing%20and%20Spoofing/images/image_5.png 
+ ![alt text](./images/image_5.png 
 "Figure 5. Spoofing doesn't work with different IP addresses")
  
 ___

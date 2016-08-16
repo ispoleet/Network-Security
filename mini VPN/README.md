@@ -83,12 +83,12 @@ ___
 
 Let's start with the simple tunnel; no encryption is provided (we use -x argument). In order to be able to understand what's going on we'll use a very simple protocol. We'll bind a local TCP server at port 8888 at one side and we'll connect to it using our tunnel from the other side. Figure 1 (top) shows the data going back and forth to the tunnel interface. Figure 1 (bottom) shows the actual data that are transmitted. Note that although we send 1 TCP packet (the word "KYRIAKOS"), more packets are sent. This is because we use TCP, so ACK packets must be sent too.
 
-![alt text](https://github.com/isp0/Network-Security/blob/master/mini%20VPN/images/image_1.png 
+![alt text](./images/image_1.png 
 "Figure 1. Sending unencrypted data over tunnel ")
  
 Figure 2 takes a closer look at the UDP packets that arrive in the remote host:
 
-![alt text](https://github.com/isp0/Network-Security/blob/master/mini%20VPN/images/image_2.png 
+![alt text](./images/image_2.png 
 "Figure 2. A UDP packet that carries an IP packet as a payload")
 
 The payload of this UDP packet, is an IP packet. The payload of this IP packet is a TCP packet which contain the word "KYRIAKOS". Now it's clear how tunnel works. The remote hosts receives the UDP packet, extracts the IP packet and forwards it to the network. Thus the network will "believe" that this IP packet come from a host that is physically connected there.
@@ -97,11 +97,11 @@ The transmission of the packets as plaintext can be a problem here. In figure 2 
 
 In figure 3 we used encryption. Although there's no difference from figure 1, we can see the difference at the packet level in figure 4. The packet is encrypted so an eavesdropper can't see anything.
 
-![alt text](https://github.com/isp0/Network-Security/blob/master/mini%20VPN/images/image_3.png 
+![alt text](./images/image_3.png 
 "Figure 3. Sending encrypted data over tunnel")
 
 
-![alt text](https://github.com/isp0/Network-Security/blob/master/mini%20VPN/images/image_4.png 
+![alt text](./images/image_4.png 
 "Figure 4.A UDP packet that carries and encrypted IP packet as a payload")
 
 ___
@@ -110,14 +110,14 @@ ___
 
 Let's stay on the example at figures 3 and 4, and assume that we want to change the session key (changing the IV is similar, so we won't discuss it here). All we have to do is press Ctrl+C (in client side) and enter the runtime command "SETKEY" as shown below:
 
-![alt text](https://github.com/isp0/Network-Security/blob/master/mini%20VPN/images/image_5.png 
+![alt text](./images/image_5.png 
 "Figure 5. Changing the session key (Client side)")
 
 We can see here that we set a new nonce and we inform the other side about this change ("49 bytes sent to SSL channel"). After that we got a message that a new shared key is negotiated ("896EFD..."). Once we do that we can continue sending and receiving data over the tunnel without any problem. Our connection remains open and we can send new data (the word "ISPO"). Figure 6 shows what's going on the server during session key update.
 
 We can see here that server received control command 66 (NONCE) so he updated the client's nonce and recalculated the new session key. Note that (obviously) the session key is the same in both sides.
 
-![alt text](https://github.com/isp0/Network-Security/blob/master/mini%20VPN/images/image_6.png 
+![alt text](./images/image_6.png 
 "Figure 6. Changing the session key (Server side)")
 
 
@@ -125,11 +125,11 @@ The final example is what happens when client does not have public keys for the 
 
 Figure 7 shows a failed attempt to login. Username/password combination is wrong, so the server terminates the connection.
 
-![alt text](https://github.com/isp0/Network-Security/blob/master/mini%20VPN/images/image_7.png 
+![alt text](./images/image_7.png 
 "Figure 7. A failed user authentication")
  
 However, if authentication is successful, client can gain access to the VPN as shown in figure 8. Beyond that we see in that screenshot how the protocol works and how the session key and the IVs are negotiated.
 
-![alt text](https://github.com/isp0/Network-Security/blob/master/mini%20VPN/images/image_8.png 
+![alt text](./images/image_8.png 
 "Figure 8. A successful user authentication")
 ___

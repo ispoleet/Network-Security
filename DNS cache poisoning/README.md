@@ -71,21 +71,21 @@ ___
 Below are the screen dumps from our evaluation. 
 At figure 1, we can see that resolver's cache is successfully poisoned for the domain example.com:
 
-![alt text](https://github.com/isp0/Network-Security/blob/master/DNS%20cache%20poisoning/images/image_1.png 
+![alt text](./images/image_1.png 
 "Figure 1. A successfully cache poisoning attack for the domain example.com")
  
 In figure 2 we can verify that our cache poisoning is successful, because the nameserver of example.com is now ns.dnslabattacker.net.
 
-![alt text](https://github.com/isp0/Network-Security/blob/master/DNS%20cache%20poisoning/images/image_2.png 
+![alt text](./images/image_2.png 
 "Figure 2. The nameserver of example.com is now poisoned.")
  
 For the second task we want to verify that our attack was actually correct, by trying to resolve the domain example.com. Figures 3 and 4 show that this was true because the original IP address of www.example.com is 93.184.216.34 and not 1.1.1.1.
 
-![alt text](https://github.com/isp0/Network-Security/blob/master/DNS%20cache%20poisoning/images/image_3.png 
+![alt text](./images/image_3.png 
 "Figure 3. Resolving example.com after a successful DNS cache poisoning")
 
 
-![alt text](https://github.com/isp0/Network-Security/blob/master/DNS%20cache%20poisoning/images/image_4.png 
+![alt text](./images/image_4.png 
 "Figure 4. Resolving mail servers of example.com after a successful DNS cache poisoning")
  
 ___
